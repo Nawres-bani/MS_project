@@ -1,0 +1,14 @@
+eureka:
+  client:
+      serviceURL:
+             defaultZone:http://localhost:9092/eureka
+spring:
+ cloud:
+    geteway:
+       routes:
+            id:microservice-projet
+            uri:lb://microservice-projet
+            predicates:
+           path=/projet/**
+          filters:
+           rewirpath=/projet/(?<path>.*),/$\{path}
