@@ -12,3 +12,11 @@ spring:
            path=/projet/**
           filters:
            rewirpath=/projet/(?<path>.*),/$\{path}
+
+           id:microservice-utilisateur
+            uri:lb://microservice-utilisateur
+            predicates:
+           path=/utilisateur/**
+          filters:
+           rewirpath=/utiisateur/(?<path>.*),/$\{path}
+
